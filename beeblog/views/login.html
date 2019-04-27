@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{{template "header"}}
+    <title>登陆 - -我的beego博客</title>
+</head>
+
+<body>
+     <div class="container" style="width: 500px">
+         <form method="post" action="/login">
+             <div class="form-group">
+                 <div class="form-group">
+                     <label>Account</label>
+                     <input id="username" class="form-control" placeholder="Enter account" name="username">
+                 </div>
+                 <div class="form-group">
+                     <label>Password</label>
+                     <input id="password" type="password" class="form-control" placeholder="Password" name="password">
+                 </div>
+                 <div class="checkbox">
+                     <label>
+                         <input type="checkbox" name="autoLogin"> 自动登录
+                     </label>
+                 </div>
+                 <button type="submit" class="btn btn-default" onclick="checkInput()">登陆</button>
+                 <button type="submit" class="btn btn-default" onclick="return backTohome();">返回</button>
+             </div>
+         </form>
+         <script>
+             function checkInput() {
+                 var username=document.getElementById("username");
+                 if (username.value.length==0){
+                     alert("请输入账号")
+                     return false
+                 }
+                 var password=document.getElementById("username");
+                 if (password.value.length==0){
+                     alert("请输入密码")
+                     return false
+                 }
+                 return true;
+             }
+             function backTohome() {
+                 window.location.href="/"
+                 return false
+             }
+         </script>
+     </div>
+</body>
+</html>
